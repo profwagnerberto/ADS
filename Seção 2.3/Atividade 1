@@ -1,0 +1,25 @@
+using System;
+
+class MainClass {
+  public static void Main (string[] args) {
+    const int qtdJogadores = 12;
+    int[] idades;
+    idades = new int[qtdJogadores];
+    int numero,soma;
+
+    Console.WriteLine("Dados de Jogadores de Basquete");
+    Console.WriteLine("==============================");
+
+    for(numero = 0; numero <= qtdJogadores - 1; numero++){
+      Console.WriteLine($"*Jogador {numero + 1} de {qtdJogadores}");
+      Console.Write("Idade: ");
+      idades [numero] = int.Parse( Console.ReadLine() );
+    } 
+
+    soma = 0;
+    foreach(int idade in idades)
+      soma = soma + idade;
+
+    Console.WriteLine ("**A soma das idades é: " + soma);
+  }
+}

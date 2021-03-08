@@ -1,0 +1,27 @@
+using System;
+
+class MainClass {
+  public static void Main (string[] args) {
+    bool pBF,pRSF;
+    bool tNB,dSRFG;
+    bool eCRC,dSRIR;
+
+    // Possui Bolsa Família?
+    pBF = true;
+
+    // Tem nacionalidade brasileira?
+    tNB = true;
+
+    // É contratado no regime CLT?
+    eCRC = false;
+
+    pRSF = ! pBF;
+    dSRFG = tNB && pBF;
+    dSRIR = tNB || eCRC;
+
+    Console.WriteLine("\nRESUMO DA ANÁLISE");
+    Console.WriteLine("Pode receber salário família: " + pRSF);
+    Console.WriteLine("Deve ser recolhido Fundo de Garantia: " + dSRFG);
+    Console.WriteLine("Deve ser recolhido Imposto de Renda: " + dSRIR);
+  }
+}

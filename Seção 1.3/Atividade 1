@@ -1,0 +1,15 @@
+using System;
+
+class MainClass {
+  public static void Main (string[] args) {
+    bool pBF,pRSF;
+
+    // Possui Bolsa Família?
+    pBF = true;
+
+    pRSF = ! pBF;
+
+    Console.WriteLine("\nRESUMO DA ANÁLISE");
+    Console.WriteLine("Pode receber salário família: " + pRSF);
+  }
+}

@@ -1,0 +1,42 @@
+using System;
+
+class MainClass {
+  public static void Main (string[] args) {
+    var txtTmp = "";
+    int numero,novoNumero,digito;
+    int E,D,C,B,A,S;
+
+    Console.Write("Forneça um número de cinco algarismos: ");
+    txtTmp = Console.ReadLine();
+    numero = int.Parse(txtTmp);
+
+//    numero = 67890;
+    E = numero % 10;  // 0
+    // Console.Write("\n");
+    // Console.WriteLine($"E: {E}");
+
+    novoNumero = numero / 10;  // 6789
+    D = novoNumero % 10;  // 9
+    // Console.WriteLine($"D: {D}");
+
+    novoNumero = novoNumero / 10;  // 678
+    C = novoNumero % 10;  // 8
+    // Console.WriteLine($"C: {C}");
+
+    novoNumero = novoNumero / 10;  // 67
+    B = novoNumero % 10;  // 7
+    // Console.WriteLine($"B: {B}");
+
+    novoNumero = novoNumero / 10;  // 6
+    A = novoNumero % 10;  // 6
+    // Console.WriteLine($"A: {A}");
+
+    S = 6*A + 5*B + 4*C + 3*D + 2*E;  // 130
+    // Console.WriteLine($"S: {S}");
+
+    digito = S % 7;  // 4
+    // Console.WriteLine($"Digito: {digito}");
+
+    Console.WriteLine($"Identificador do funcionário: {numero}-{digito}");
+  }
+}

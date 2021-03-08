@@ -1,0 +1,15 @@
+using System;
+
+class MainClass {
+  public static void Main (string[] args) {
+    int num,multip,tab;
+
+    Console.Write ("Informe o número da tabuada: ");
+    num = int.Parse( Console.ReadLine() );
+
+    for ( multip = 1; multip <= 10; multip++ ) {
+      tab = num * multip;
+      Console.WriteLine($"{num,3} x {multip,3} = {tab,3}");
+    }
+  }
+}

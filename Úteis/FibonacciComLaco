@@ -1,0 +1,32 @@
+using System;
+
+class MainClass {
+  public static void Main (string[] args) {
+    int F1,F2,Fn,pTA,sTA,tA,n;
+
+    // "... começando normalmente por 0 e 1..."
+    n = 1;   // número do termo
+    F1 = 0;  // primeiro Termo Anterior = pTA
+    Console.WriteLine ($"F{n}: {F1}");
+    n = 2;
+    F2 = 1;  // segundo Termo Anterior  = sTA
+    Console.WriteLine ($"F{n}: {F2}");
+    n = 3;
+    Fn = F2 + F1;  // cálculo do termo atual
+    Console.WriteLine ($"F{n}: {Fn}");
+
+    // "Transformação do estado inicial em termos genéricos"
+    pTA = F1;
+    sTA = F2;
+    tA = Fn;
+
+    // "Estados sequentes"
+    while ( n != 6 ) {
+      n++;   // número do termo atual
+      pTA = sTA;
+      sTA = tA;
+      tA = sTA + pTA;
+      Console.WriteLine ($"F{n}: {tA}");
+    }
+  }
+}

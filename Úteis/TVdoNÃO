@@ -1,0 +1,23 @@
+using System;
+
+class MainClass {
+  public static void Main (string[] args) {
+    bool p;   
+
+    Console.Clear();
+    Console.WriteLine("Tabela Verdade do NL");
+    Console.WriteLine("=================");
+    Console.WriteLine("|  VL   |   !   |");
+    Console.WriteLine("-----------------");
+    p = true;
+    Console.WriteLine($"| {p,-5} | {! p,-5} |");
+    p = false;
+    Console.WriteLine($"| {p,-5} | {! p,-5} |");
+    Console.WriteLine("=================");
+
+    Console.WriteLine("\nLEGENDA:");
+    Console.WriteLine("NL: Operador NÃO Lógico (!).");
+    Console.WriteLine("VL: Valor Lógico (true ou false).");
+    Console.WriteLine("True: Verdadeiro.");
+  }
+}

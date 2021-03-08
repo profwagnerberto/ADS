@@ -1,0 +1,28 @@
+using System;
+
+class MainClass {
+  public static void Main (string[] args) {
+    int idade;
+    double temperatura;
+    char sexo;
+
+    Console.Clear();
+
+    do {
+      Console.Write ("Informe sua idade (não pode ser negativa): ");
+      idade = int.Parse( Console.ReadLine() );
+    }while ( idade < 0 );
+
+    do {
+      Console.Write ("Informe sua temperatura (entre 10.0 e 40.0 graus): ");
+      temperatura = double.Parse( Console.ReadLine() );
+    }while ( temperatura < 10.0 || temperatura > 40.0);
+
+    do {
+      Console.Write ("Informe seu sexo (F ou M): ");
+      sexo = char.Parse( Console.ReadLine() );
+    }while ( sexo != 'F' && sexo != 'M' );
+
+    Console.WriteLine( "O formulário foi preenchido com sucesso." );
+  }
+}

@@ -1,0 +1,27 @@
+using System;
+
+class MainClass {
+  public static void Main (string[] args) {
+    bool p,q;   
+
+    Console.Clear();
+    Console.WriteLine("Tabela Verdade do EL");
+    Console.WriteLine("=========================");
+    Console.WriteLine("|  VL1  |  VL2  |  &&   |");
+    Console.WriteLine("-------------------------");
+    p = true; q = true;
+    Console.WriteLine($"| {p,-5} | {q,-5} | {p && q,-5} |");
+    q = false;
+    Console.WriteLine($"| {p,-5} | {q,-5} | {p && q,-5} |");
+    p = false; q = true;
+    Console.WriteLine($"| {p,-5} | {q,-5} | {p && q,-5} |");
+    q = false;
+    Console.WriteLine($"| {p,-5} | {q,-5} | {p && q,-5} |");
+    Console.WriteLine("=========================");
+
+    Console.WriteLine("\nLEGENDA:");
+    Console.WriteLine("EL: Operador E Lógico (&&).");
+    Console.WriteLine("VL1: Valor Lógico 1 (true ou false).");
+    Console.WriteLine("True: Verdadeiro.");
+  }
+}

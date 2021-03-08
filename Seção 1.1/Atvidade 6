@@ -1,0 +1,9 @@
+using System;
+
+class MainClass {
+  public static void Main (string[] args) {
+    Console.WriteLine( 1 - 1.0 / 2.0 );
+    Console.WriteLine( 9 != 9 );
+    Console.WriteLine( true || false );
+  }
+}

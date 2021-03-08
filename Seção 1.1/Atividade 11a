@@ -1,0 +1,29 @@
+using System;
+
+class MainClass {
+  public static void Main (string[] args) {
+    string txtTmp;
+    string nome;
+    int idade;
+    double altura;
+    bool casado;
+
+    Console.Write("Digite seu primeiro nome: ");
+    txtTmp = Console.ReadLine();
+    nome = txtTmp;
+
+    Console.Write("Digite sua idade em anos: ");
+    txtTmp = Console.ReadLine();
+    idade = int.Parse(txtTmp);
+
+    Console.Write("Digite sua altura em metros: ");
+    txtTmp = Console.ReadLine();
+    altura = double.Parse(txtTmp);
+
+    Console.Write("É casado (true ou false): ");
+    txtTmp = Console.ReadLine();
+    casado = bool.Parse(txtTmp);
+
+    Console.Write($"{nome} tem {idade} anos, {altura} m de altura e a informação se é casado é {casado}. ");
+  }
+}

@@ -1,0 +1,27 @@
+using System;
+
+class MainClass {
+  public static void Main (string[] args) {
+    string txtTmp;
+    double salario, prestacao, limite;
+
+    Console.Clear();
+   
+    Console.Write("Qual o valor do seu salário bruto? ");
+    txtTmp = Console.ReadLine();
+    salario = double.Parse(txtTmp);
+
+    Console.Write("Qual o valor máximo da prestação\n que pode pagar por mês? ");
+    txtTmp = Console.ReadLine();
+    prestacao = double.Parse(txtTmp);
+
+    limite = salario * 30 / 100;
+
+    if ( prestacao <= limite ) {
+      Console.WriteLine("***");
+      Console.WriteLine("Voce tem direito ao empréstimo.");
+    }
+    else
+      Console.WriteLine("***Voce NAO tem direito ao emprestimo.");
+  }
+}

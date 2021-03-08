@@ -1,0 +1,9 @@
+using System;
+
+class MainClass {
+  public static void Main (string[] args) {
+    var c1 = 1 - 1.0 / 2.0;
+    var c2 = 9 != 9;
+    var c3 = true || false;
+  }
+}

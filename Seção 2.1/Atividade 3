@@ -1,0 +1,37 @@
+using System;
+
+class MainClass {
+  public static void Main (string[] args) {
+    string txtTmp;
+    int codigo;
+
+    Console.Clear();
+   
+    Console.Write("Qual o Código da palestra\n da qual deverá participar? ");
+    txtTmp = Console.ReadLine();
+    codigo = int.Parse(txtTmp);
+
+    Console.Clear();
+    Console.WriteLine("PALESTRA | LOCAL | HORARIO");
+    Console.WriteLine("==========================");
+
+    switch ( codigo ) {
+      case 1:
+        Console.WriteLine("Linux | Auditorio 1 | 8h as 9h");
+        break;
+      case 2:
+        Console.WriteLine("Recuperacao | Auditorio 2 | 9h as 19h");
+        break;
+      case 3:
+        Console.WriteLine("Windows | Auditorio 3 | 13h as 14h");
+        break;
+      case 4:
+        Console.WriteLine("Logica | Auditorio Principal | 15h as 17h");
+        break;
+      default:
+        Console.WriteLine("***Codigo invalido.");
+        break;
+    }
+
+  }
+}

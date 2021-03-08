@@ -1,0 +1,32 @@
+using System;
+
+class MainClass {
+  public static void Main (string[] args) {
+    int F1,F2,Fn,pTA,sTA,tA,numero;
+
+    // "... começando normalmente por 0 e 1..."
+    F1 = 0;  // primeiro Termo Anterior = pTA
+    F2 = 1;  // segundo Termo Anterior  = sTA
+    Fn = F2 + F1;  // cálculo do termo atual
+
+    // "Transformação do estado inicial em termos genéricos"
+    pTA = F1;
+    sTA = F2;
+    tA = Fn;
+
+    Console.WriteLine ( "Pertence à Fibonacci?" );
+    Console.WriteLine ( "=====================" );
+    Console.Write ( "Informe o número para ser verificado: " );
+    numero = int.Parse( Console.ReadLine() );
+
+    // "Estados sequentes"
+    while ( numero > tA ) {
+      pTA = sTA;
+      sTA = tA;
+      tA = sTA + pTA;
+      Console.WriteLine ( tA );
+    }
+    
+    Console.WriteLine ( "Resposta: {0}.", numero == tA ? "Sim" : "Não" );
+  }
+}

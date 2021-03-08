@@ -1,0 +1,10 @@
+using System;
+
+class MainClass {
+  public static void Main (string[] args) {
+    Console.WriteLine("Wagner");
+    Console.WriteLine(30);
+    Console.WriteLine(1.80);
+    Console.WriteLine(false);
+  }
+}

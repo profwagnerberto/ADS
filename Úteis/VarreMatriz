@@ -1,0 +1,59 @@
+using System;
+
+class MainClass {
+  public static void Main (string[] args) {
+    const int linhas = 2;
+    const int colunas = 3;
+    string txtTmp;
+    char[,] valores;
+    valores = new char[linhas,colunas];
+    int linha = 0,coluna = 0;
+
+    Console.Clear();
+    Console.WriteLine("Demonstração de Varredura de uma Matriz de char");
+    Console.WriteLine("===============================================\n");
+    Console.WriteLine("  C O L U N A");
+    Console.WriteLine(" |-----------");
+    Console.WriteLine("L|  | 0| 1| 2");
+    Console.WriteLine("I|--+--+--+--");
+    Console.WriteLine($"N| 0|{valores[0,0],2}|{valores[0,1],2}|{valores[0,2],2}");
+    Console.WriteLine("H|--+--+--+--");
+    Console.WriteLine($"A| 1|{valores[1,0],2}|{valores[1,1],2}|{valores[1,2],2}");
+    Console.WriteLine("=============\n");
+    Console.WriteLine("*Fixando a linha.");
+    Console.WriteLine("**Variando a coluna.");
+
+    while( linha < 2 ){
+      Console.Write($"Digite uma letra para a coordenada ({linha},{coluna}): ");
+      txtTmp = Console.ReadLine();
+      valores[linha,coluna] = char.Parse( txtTmp );
+
+      if(linha<2){
+        if(coluna==2){
+          linha++;coluna=0;
+          Console.WriteLine("\n***Mudança de linha.");
+          Console.WriteLine("****Reiniciando a coluna.\n");
+          Console.WriteLine("Pressione uma tecla...");
+          Console.ReadLine();
+        }else{
+          coluna++;
+          Console.WriteLine("*Fixando a linha.");
+          Console.WriteLine("**Variando a coluna.");
+        }
+      }
+
+      Console.Clear();
+      Console.WriteLine("Demonstração de Varredura de uma Matriz de char");
+      Console.WriteLine("===============================================\n");
+      Console.WriteLine("  C O L U N A");
+      Console.WriteLine(" |-----------");
+      Console.WriteLine("L|  | 0| 1| 2");
+      Console.WriteLine("I|--+--+--+--");
+      Console.WriteLine($"N| 0|{valores[0,0],2}|{valores[0,1],2}|{valores[0,2],2}");
+      Console.WriteLine("H|--+--+--+--");
+      Console.WriteLine($"A| 1|{valores[1,0],2}|{valores[1,1],2}|{valores[1,2],2}");
+      Console.WriteLine("=============\n");
+    }
+
+  }
+}
