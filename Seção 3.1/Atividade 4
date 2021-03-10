@@ -1,0 +1,24 @@
+using System;
+
+class MainClass {
+
+  static double ConverteTemp( double parametro ){
+    double coeficiente;
+
+    coeficiente = 273.15;
+
+    return parametro + coeficiente;
+  }
+
+  public static void Main (string[] args) {
+    double celsius;
+    Console.Clear();
+    Console.WriteLine("Conversão de temperatura Celsius para Kelvin");
+    Console.WriteLine("============================================");
+    Console.Write("\nDigite a temperatura em Celsius: ");
+    celsius = double.Parse( Console.ReadLine() );
+
+    Console.WriteLine("\nTemperatura em Kelvin: " + ConverteTemp( celsius ) );
+
+  }
+}

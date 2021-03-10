@@ -9,12 +9,12 @@ class ContaCorrente{
     this.saldo += valor;
   }
 
-  public double VerSaldo(){
+  public double PegarSaldo(){
     return this.saldo;
   }
 
   public void Sacar(double valor){
-    if(this.VerSaldo() >= valor)
+    if(this.PegarSaldo() >= valor)
       this.saldo -= valor;
   }
 
@@ -51,22 +51,22 @@ class MainClass {
      0, conta0.numero, conta0.saldo);
 
     Console.WriteLine("*Desejam acessar o saldo de um determinado registro através de uma função.");
-    conta0.VerSaldo();
+    conta0.PegarSaldo();
     Console.WriteLine("Conta{0} | Saldo: {2,6:F2}",
-     0, conta0.numero, conta0.VerSaldo() );
+     0, conta0.numero, conta0.PegarSaldo() );
     Console.WriteLine("Conta{0} | Saldo: {2,6:F2}\n",
-     1, conta1.numero, conta1.VerSaldo() );
+     1, conta1.numero, conta1.PegarSaldo() );
 
     Console.WriteLine("*Permitir sacar um valor monetário do saldo de um determinado registro através de uma função.");
     conta0.Sacar(25);
     Console.WriteLine("Conta{0} | Saldo: {2,6:F2}\n",
-     0, conta0.numero, conta0.VerSaldo() );
+     0, conta0.numero, conta0.PegarSaldo() );
 
     Console.WriteLine("*Fazer com que seja possível transferir um valor monetário do saldo de um determinado registro para o saldo de outro determinado registro através de uma função.");
     conta0.Transferir(15, conta1);
     Console.WriteLine("Conta{0} | Saldo: {2,6:F2}",
-     0, conta0.numero, conta0.VerSaldo() );
+     0, conta0.numero, conta0.PegarSaldo() );
     Console.WriteLine("Conta{0} | Saldo: {2,6:F2}\n",
-     1, conta1.numero, conta1.VerSaldo() );
+     1, conta1.numero, conta1.PegarSaldo() );
   }
 }
