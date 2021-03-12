@@ -1,0 +1,49 @@
+using System;
+using System.IO;
+using Fintech;
+
+  class MainClass {
+
+    public static void Main (string[] args) {
+      int valorProcurado;
+      StreamReader leitor;
+      string linha;
+      bool ehFimDoArquivo;
+      string stringTmp;
+      int intTmp;
+      bool foiEncontrado;
+      ContaBancaria contaTmp;
+      double doubleTmp;
+
+      ehFimDoArquivo = false;
+      foiEncontrado = false;
+      contaTmp = new ContaBancaria();
+
+      valorProcurado = 12;
+
+      using ( leitor = new StreamReader("Fintech/ContaBancaria.dat") ){
+        do {
+          linha = leitor.ReadLine();
+          if ( linha == null ) 
+            ehFimDoArquivo = true;
+          else{
+            stringTmp = linha.Substring(0,5);
+            intTmp = int.Parse(stringTmp);
+            if ( intTmp == valorProcurado ) {
+              foiEncontrado = true;
+              contaTmp.Numero = intTmp;
+              contaTmp.Titular = linha.Substring(6,20);
+              stringTmp = linha.Substring(27,9);
+              doubleTmp = double.Parse(stringTmp);
+              contaTmp.Depositar(doubleTmp);
+            }
+          }
+        } while ( !ehFimDoArquivo && !foiEncontrado );
+      }
+
+      if ( foiEncontrado )
+        Console.WriteLine("Conta, Número: {0} | Saldo: {1,9:F2}\n", contaTmp.Numero, contaTmp.PegarSaldo());
+      else
+        Console.WriteLine("Conta Não Encontrada");
+    }
+  }

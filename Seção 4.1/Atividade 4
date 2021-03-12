@@ -1,0 +1,54 @@
+using System;
+using System.IO;
+using Fintech;
+
+  class MainClass {
+
+    public static void Main (string[] args) {
+      string caminho;
+      string arquivo;
+      StreamWriter gravador;
+      string linha;
+      bool ehFimDoArquivo;
+      string stringTmp;
+      int intTmp;
+      int valorProcurado;
+      bool foiEncontrado;
+
+      caminho = "Fintech";
+      arquivo = "ContaBancaria";
+      ehFimDoArquivo = false;
+      foiEncontrado = false;
+
+      valorProcurado = 22;
+
+      using ( var leitor = File.OpenText(caminho + "/" + arquivo + ".dat") )
+
+      using ( gravador = new StreamWriter(caminho + "/" + arquivo + ".tmp",true) ) {
+        do {
+          linha = leitor.ReadLine();
+          if ( linha == null ) 
+            ehFimDoArquivo = true;
+          else{
+            stringTmp = linha.Substring(0,5);
+            intTmp = int.Parse(stringTmp);
+            if ( intTmp != valorProcurado ) 
+              gravador.WriteLine(linha);
+            else
+              foiEncontrado = true;
+          }
+        } while ( !ehFimDoArquivo );
+      }
+
+      if ( foiEncontrado ) {
+        Console.WriteLine("Conta Excluída.");
+
+        File.Delete(caminho + "/" + arquivo + ".dat");
+        File.Move(caminho + "/" + arquivo + ".tmp", caminho + "/" + arquivo + ".dat");
+      } else {
+        Console.WriteLine("Conta Não Encontrada.");
+
+        File.Delete(caminho + "/" + arquivo + ".tmp");
+      }
+    }
+  }

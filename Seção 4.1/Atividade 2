@@ -1,0 +1,32 @@
+using System;
+using System.IO;
+using Fintech;
+
+  class MainClass {
+
+    public static void Main (string[] args) {
+      var conta0 = new ContaBancaria();
+      var conta1 = new ContaBancaria();
+
+      Console.Clear();
+      Console.WriteLine("*Ao gravar uma conta na memória");
+      conta0.Numero = 11;
+      conta0.Titular = "Bruno";
+
+      Console.WriteLine("*criar um arquivo texto CSV com a extensão dat e organizado na pasta de classes e dados.");
+      using (var gravador = new StreamWriter("Fintech/ContaBancaria.dat", true)){
+        Console.WriteLine("*Gravar, em uma linha deste arquivo, os valores desta conta.");
+
+        gravador.WriteLine("{0,5};{1,-20};{2,9:F2};",
+        conta0.Numero,conta0.Titular,conta0.PegarSaldo());
+	    }
+
+      conta1.Numero = 22;
+      conta1.Titular = "Gois";
+      using (var gravador = new StreamWriter("Fintech/ContaBancaria.dat", true)){
+        gravador.WriteLine("{0,5};{1,-20};{2,9:F2};",
+        conta1.Numero,conta1.Titular,conta1.PegarSaldo());
+	    }
+
+    }
+  }

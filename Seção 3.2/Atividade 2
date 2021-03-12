@@ -27,6 +27,7 @@ class ContaCorrente{
 class MainClass {
 
   public static void Main (string[] args) {
+    Console.Clear();
     Console.WriteLine("*Querem começar os testes com dois registros que sigam a estrutura.");
     ContaCorrente conta0 = new ContaCorrente();
     ContaCorrente conta1 = new ContaCorrente();
@@ -40,7 +41,6 @@ class MainClass {
     conta1.titular = "Gois";
     conta1.saldo = 0;
 
-    Console.Clear();
     Console.WriteLine("*Desejam mostrar o saldo de um determinado registro.");
     Console.WriteLine("Conta{0} | Saldo: {2,6:F2}\n",
      0, conta0.numero, conta0.saldo);
