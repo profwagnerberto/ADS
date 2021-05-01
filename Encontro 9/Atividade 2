@@ -22,6 +22,7 @@ class ContaCorrente{
     this.Sacar(valor);
     contaDestino.Depositar(valor);
   }
+
 }
 
 class MainClass {
@@ -42,31 +43,32 @@ class MainClass {
     conta1.saldo = 0;
 
     Console.WriteLine("*Desejam mostrar o saldo de um determinado registro.");
-    Console.WriteLine("Conta{0} | Saldo: {2,6:F2}\n",
-     0, conta0.numero, conta0.saldo);
+    Console.WriteLine("Conta{0} | Saldo: {1,6:F2}\n",
+     0, conta0.saldo);
 
     Console.WriteLine("*Permitir depositar um valor monetário no saldo de um determinado registro através de uma função.");
     conta0.Depositar(100);
-    Console.WriteLine("Conta{0} | Saldo: {2,6:F2}\n",
-     0, conta0.numero, conta0.saldo);
+    Console.WriteLine("Conta{0} | Saldo: {1,6:F2}\n",
+     0, conta0.saldo);
 
-    Console.WriteLine("*Desejam acessar o saldo de um determinado registro através de uma função.");
+    Console.WriteLine("*Desejam pegar o saldo de um determinado registro através de uma função.");
     conta0.PegarSaldo();
-    Console.WriteLine("Conta{0} | Saldo: {2,6:F2}",
-     0, conta0.numero, conta0.PegarSaldo() );
-    Console.WriteLine("Conta{0} | Saldo: {2,6:F2}\n",
-     1, conta1.numero, conta1.PegarSaldo() );
+    Console.WriteLine("Conta{0} | Saldo: {1,6:F2}",
+     0, conta0.PegarSaldo() );
+    Console.WriteLine("Conta{0} | Saldo: {1,6:F2}\n",
+     1, conta1.PegarSaldo() );
 
     Console.WriteLine("*Permitir sacar um valor monetário do saldo de um determinado registro através de uma função.");
     conta0.Sacar(25);
-    Console.WriteLine("Conta{0} | Saldo: {2,6:F2}\n",
-     0, conta0.numero, conta0.PegarSaldo() );
+    Console.WriteLine("Conta{0} | Saldo: {1,6:F2}\n",
+     0, conta0.PegarSaldo() );
 
     Console.WriteLine("*Fazer com que seja possível transferir um valor monetário do saldo de um determinado registro para o saldo de outro determinado registro através de uma função.");
     conta0.Transferir(15, conta1);
-    Console.WriteLine("Conta{0} | Saldo: {2,6:F2}",
-     0, conta0.numero, conta0.PegarSaldo() );
-    Console.WriteLine("Conta{0} | Saldo: {2,6:F2}\n",
-     1, conta1.numero, conta1.PegarSaldo() );
+    Console.WriteLine("Conta{0} | Saldo: {1,6:F2}",
+     0, conta0.PegarSaldo() );
+    Console.WriteLine("Conta{0} | Saldo: {1,6:F2}\n",
+     1, conta1.PegarSaldo() );
+
   }
 }

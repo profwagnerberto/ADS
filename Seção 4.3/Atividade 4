@@ -1,6 +1,6 @@
 // ** Este método deve fazer parte da classe ContaBancaria
 
-    public void Criar () {
+    public void Alterar () {
       SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
       builder.DataSource = "localhost";   
       builder.UserID = "sa";              
@@ -13,8 +13,9 @@
 
           StringBuilder sb = new StringBuilder();
           sb.Clear();
-          sb.Append("INSERT ContaBancaria (numero, titular, saldo) ");
-          sb.Append("VALUES (@numero, @titular, @saldo);");
+          sb.Append("UPDATE ContaBancaria");
+          sb.Append(" SET titular = @titular, saldo = @saldo");
+          sb.Append(" WHERE numero = @numero;");
           String sql = sb.ToString();
           using (SqlCommand command = new SqlCommand(sql, connection))
           {

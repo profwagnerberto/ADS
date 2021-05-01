@@ -1,6 +1,6 @@
 // ** Este método deve fazer parte da classe ContaBancaria
 
-    public void Criar () {
+    public void Excluir () {
       SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
       builder.DataSource = "localhost";   
       builder.UserID = "sa";              
@@ -13,14 +13,12 @@
 
           StringBuilder sb = new StringBuilder();
           sb.Clear();
-          sb.Append("INSERT ContaBancaria (numero, titular, saldo) ");
-          sb.Append("VALUES (@numero, @titular, @saldo);");
+          sb.Append("DELETE ContaBancaria");
+          sb.Append(" WHERE numero = @numero;");
           String sql = sb.ToString();
           using (SqlCommand command = new SqlCommand(sql, connection))
           {
               command.Parameters.AddWithValue("@numero", this.numero);
-              command.Parameters.AddWithValue("@titular", this.titular);
-              command.Parameters.AddWithValue("@saldo", this.saldo);
               int rowsAffected = command.ExecuteNonQuery();
           }
       }

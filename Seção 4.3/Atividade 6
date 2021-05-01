@@ -1,0 +1,35 @@
+// ** Este método deve fazer parte da classe ContaBancaria
+
+        public void Recuperar()
+        {
+            SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
+            builder.DataSource = "localhost";
+            builder.UserID = "sa";
+            builder.Password = "Mssql2021";
+            builder.InitialCatalog = "EmpresaDB";
+
+            using (SqlConnection connection = new SqlConnection(builder.ConnectionString))
+            {
+                connection.Open();
+
+                var sql = "";
+                sql += "SELECT *";
+                sql += " FROM ContaBancaria";
+                sql += " WHERE numero = @numero;";
+                using (SqlCommand command = new SqlCommand(sql, connection))
+                {
+                    command.Parameters.AddWithValue("@numero", this.numero);
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if ( reader.Read() ) {
+                          this.numero = reader.GetInt32(0);
+                          this.titular = reader.GetString(1);
+                        }else{
+                          this.numero = 0;
+                          this.titular = "";
+                        }
+                    }
+                }
+            }
+        }
+

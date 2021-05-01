@@ -1,0 +1,21 @@
+Declarar um vetor para Tres Notas
+Alocar 3 elementos
+
+Executar 3 vezes:
+  Leitura da nota do aluno
+  Atribuir a nota ao próximo elemento vazio do vetor
+
+Executar 4 vezes:
+  Mostrar o número do aluno
+
+Colocar a repetição das notas dentro da repetição dos alunos
+
+Declarar uma matriz 3 x 4 para Todas as Notas
+Alocar 12 elementos
+
+Alterar a leitura das notas para a matriz.
+
+Varrer a linha da matriz das notas do aluno
+  somá-las
+
+Mostrá-la
