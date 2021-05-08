@@ -1,0 +1,48 @@
+namespace Fintech {
+
+  class ContaCorrente{
+    private int numero;
+    public string Titular { get; private set; }
+    private double saldo;
+
+    public ContaCorrente(int numero, string titular){
+      Numero = numero;
+      Titular = titular;
+    }
+
+    public ContaCorrente(int numero, string titular, double valor) :this(numero, titular) {
+      this.Depositar(valor);
+    }
+
+    public int Numero {
+      get {
+        return this.numero * 10;
+      }
+
+      set {
+        if( value > 0 )
+          this.numero = value;
+      }
+    }
+
+    public void Depositar(double valor){
+      this.saldo += valor;
+    }
+
+    public double PegarSaldo(){
+      return this.saldo;
+    }
+
+    public void Sacar(double valor){
+      if(this.PegarSaldo() >= valor)
+        this.saldo -= valor;
+    }
+
+    public void Transferir(double valor, ContaCorrente contaDestino){
+      this.Sacar(valor);
+      contaDestino.Depositar(valor);
+    }
+
+  }
+
+}

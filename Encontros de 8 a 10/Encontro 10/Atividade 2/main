@@ -1,0 +1,15 @@
+using System;
+using Fintech;
+
+class MainClass {
+
+  public static void Main (string[] args) {
+    Console.Clear();
+    ContaCorrente conta0 = new ContaCorrente(11, "Bruno");
+    //conta0.titular = "Bruno";
+    conta0.saldo = 0;
+    Console.WriteLine("Numero: {0} | Saldo: {1,6:F2}",
+     conta0.numero, conta0.PegarSaldo() );
+
+  }
+}
